@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 export default class Main extends Component {
   state = {
@@ -42,8 +43,8 @@ export default class Main extends Component {
         {products.map(product => (
           <article key={product._id}>
             <strong>{product.title}</strong>
-            <p>{product.description}</p>
-            <a href="">Acessar</a>
+            <p>{product.description}</p>            
+            <Link to={`/products/${product._id}`}>Acessar</Link>
           </article>
         ))}
         <div className="actions">
